@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Quarter Cylinder Block with Rectangular Cutout";
+}
+
+<h1>QCB-RB Calculator</h1>
+
+<form method="post">
+
+    <h3>Quarter Cylinder</h3>
+    <input type="number" step="any" name="Radius" placeholder="Radius" required />
+    <input type="number" step="any" name="Height" placeholder="Height" required />
+
+    <h3>Rectangular Cutout</h3>
+    <input type="number" step="any" name="CutLength" placeholder="Length" required />
+    <input type="number" step="any" name="CutWidth" placeholder="Width" required />
+    <input type="number" step="any" name="CutHeight" placeholder="Height" required />
+
+    <br><br>
+    <button type="submit">Calculate Volume</button>
+</form>
+
+@if (Model.HasResult)
+{
+    <h2>Volume: @Model.Result</h2>
+}
+
